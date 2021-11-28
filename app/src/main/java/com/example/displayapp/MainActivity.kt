@@ -1,7 +1,11 @@
 package com.example.displayapp
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -17,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     var duration: TextView? = null
     var price: TextView? = null
 
-    var backgroundImage: ImageView? = null
+    var header: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         rating = findViewById(R.id.textView_rating)
         duration = findViewById(R.id.textView_duration)
         price = findViewById(R.id.textView_price)
-        backgroundImage = findViewById(R.id.imageView)
+        header = findViewById(R.id.imageView_header)
     }
 
     fun restApi() {
@@ -47,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     is Result.Success -> {
                         val data = result.get()
-                        Picasso.get().load(data.header_image).into(backgroundImage)
+                        Picasso.get().load(data.header_image).into(header)
                         changeText (title, data.title)
                         changeText (rating, data.average_rating+"/5 "+"("+data.rating_count.toString()+")")
                         changeText(duration, "Duration: "+data.duration+" minutes")

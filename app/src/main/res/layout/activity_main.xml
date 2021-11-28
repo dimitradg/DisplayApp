@@ -2,26 +2,39 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_header"
         android:layout_width="413dp"
         android:layout_height="190dp"
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/background_image"
+        android:contentDescription="@string/imageView_header"
         android:cropToPadding="false"
         android:importantForAccessibility="auto"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/textView_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/imageView_favorite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/favorite"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/imageView_favorite" />
 
     <TextView
         android:id="@+id/textView_title"
@@ -35,7 +48,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_header" />
 
     <Button
         android:id="@+id/button_category"
@@ -62,10 +75,25 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif"
         android:text="@string/textView_from"
+        android:textColor="#979797"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_rating" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_rating"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageView_audio"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/imageView_audio"
+        app:layout_constraintEnd_toStartOf="@+id/textView_languages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_duration"
+        app:srcCompat="@drawable/audio" />
 
     <TextView
         android:id="@+id/textView_languages"
@@ -75,10 +103,24 @@
         android:layout_marginTop="10dp"
         android:fontFamily="sans-serif"
         android:text="@string/textView_languages"
+        android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_duration" />
+
+    <ImageView
+        android:id="@+id/imageView_duration"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/imageView_duration"
+        app:layout_constraintEnd_toStartOf="@+id/textView_duration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_category"
+        app:srcCompat="@drawable/duration" />
 
     <TextView
         android:id="@+id/textView_duration"
@@ -88,23 +130,40 @@
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
         android:text="@string/textView_duration"
+        android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_category" />
+
+    <ImageView
+        android:id="@+id/imageView_images"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/imageView_images"
+        app:layout_constraintEnd_toStartOf="@+id/textView_threesixtyimages"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_audio"
+        app:srcCompat="@drawable/images" />
 
     <TextView
         android:id="@+id/textView_threesixtyimages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif"
         android:text="@string/textView_threesixtyimages"
+        android:textColor="#979797"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_languages" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_languages"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView_perperson"
@@ -114,10 +173,12 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif"
         android:text="@string/textView_perperson"
+        android:textColor="#979797"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_price" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_price"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView_price"
@@ -135,6 +196,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_from" />
 
+    <ImageView
+        android:id="@+id/imageView_rating"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/imageView_rating"
+        app:layout_constraintEnd_toStartOf="@+id/textView_rating"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_header"
+        app:srcCompat="@drawable/star"
+        tools:ignore="ImageContrastCheck" />
+
     <TextView
         android:id="@+id/textView_rating"
         android:layout_width="wrap_content"
@@ -143,9 +216,10 @@
         android:layout_marginEnd="12dp"
         android:fontFamily="sans-serif"
         android:text="@string/textView_rating"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_header" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
