@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DisplayApp</string>
+    <string name="textView_category">Audio Tours</string>
+    <string name="textView_title">Title</string>
+    <string name="textView_rating">Rating</string>
+    <string name="imageView">\@string/imageView</string>
+    <string name="background_image">TODO</string>
+    <string name="textView_duration">TextView</string>
+    <string name="textView_languages">Audio tour in 3 languages</string>
+    <string name="textView_threesixtyimages">360° images</string>
+    <string name="textView_perperson">per person</string>
+    <string name="textView_from">from</string>
+    <string name="textView_price">TextView</string>
+    <string name="button_category">Audio Tours</string>
+</resources>
