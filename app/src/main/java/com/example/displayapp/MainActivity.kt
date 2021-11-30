@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         duration = findViewById(R.id.textView_duration)
         price = findViewById(R.id.textView_price)
         header = findViewById(R.id.imageView_header)
+
+        //the following variable should be used for calling the changeTextFont variable
         /*languages = findViewById(R.id.textView_languages)*/
     }
 
@@ -60,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                         changeText(duration, "Duration: "+data.duration+" minutes")
                         changeText(price, data.retail_price+"€")
 
-                        //changing substring colour
+                        //calling changeTextFont function
 
                         /*changeTextFont(rating, start: 7, end: rating.toString().length)
                         changeTextFont(duration, start: 1, end: 10)
