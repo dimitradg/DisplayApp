@@ -12,6 +12,7 @@ import android.widget.TextView
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     var rating: TextView? = null
     var duration: TextView? = null
     var price: TextView? = null
+    /*var languages: TextView? = null*/
 
     var header: ImageView? = null
 
@@ -37,12 +39,13 @@ class MainActivity : AppCompatActivity() {
         duration = findViewById(R.id.textView_duration)
         price = findViewById(R.id.textView_price)
         header = findViewById(R.id.imageView_header)
+        /*languages = findViewById(R.id.textView_languages)*/
     }
 
     fun restApi() {
 
 
-        val httpAsync = "https://create.cliomuseapp.com/tour.json"
+        "https://create.cliomuseapp.com/tour.json"
             .httpGet()
             .responseObject(Tour.Deserializer()) { request, response, result ->
                 when (result) {
@@ -57,6 +60,12 @@ class MainActivity : AppCompatActivity() {
                         changeText(duration, "Duration: "+data.duration+" minutes")
                         changeText(price, data.retail_price+"€")
 
+                        //changing substring colour
+
+                        /*changeTextFont(rating, start: 7, end: rating.toString().length)
+                        changeTextFont(duration, start: 1, end: 10)
+                        changeTextFont(languages, start: 1, end: 15)*/
+
                     }
                 }
             }
@@ -68,6 +77,20 @@ class MainActivity : AppCompatActivity() {
         textView !!.text = data
 
     }
+
+    /* function changing substring font
+    fun changeTextFont(text: TextView, start: Int, end: Int)
+    {
+        val tSpannableString = SpannableString(text.toString())
+
+        val gray = ForegroundColorSpan(Color.GRAY)
+
+        tSpannableString.setSpan(gray, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        text !!.text = tSpannableString
+
+
+    }*/
 
 
 }
